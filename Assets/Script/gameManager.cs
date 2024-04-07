@@ -10,7 +10,8 @@ public class gameManager : MonoBehaviour
     public static bool ife = false;
     public static bool trinity = false;
     [SerializeField] GameObject gameOver;
-    [SerializeField] GameObject winner;
+    
+    int i = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,29 +28,27 @@ public class gameManager : MonoBehaviour
         }
         
 
-        if (gameManager.ife == true)
+        if (gameManager.ife == true && i == 1)
         {
             Debug.Log("it's I");
+            i++;
         }
-        if (gameManager.oak == true)
+        if (gameManager.oak == true && i == 1)
         {
             Debug.Log("it's O");
+            i++;
         }
-        if ( gameManager.devyn == true)
+        if ( gameManager.devyn == true && i == 1)
         {
             Debug.Log("it's D");
+            i++;
         }
-        if (gameManager.trinity == true)
+        if (gameManager.trinity == true && i == 1)
         {
             Debug.Log("it's T");
+            i++;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("finishLine") == true && deathCount < 3)
-        {
-            winner.SetActive(true);
-        }
-    }
+   
 }

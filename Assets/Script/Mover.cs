@@ -9,6 +9,7 @@ public class Mover : MonoBehaviour
     //Animator animator;
     Vector3 checkpoint;
     Vector3 beginning;
+    [SerializeField] GameObject winner;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,8 @@ public class Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkpoint = new Vector3 (0f, 1.04f, 0f);
-        beginning = new Vector3(0f, 1.04f, -49f);
+        checkpoint = new Vector3 (0f, 0f, 0f);
+        beginning = new Vector3(0f, 0f, -49f);
 
         if(Input.GetKey(KeyCode.UpArrow))
         {
@@ -54,7 +55,7 @@ public class Mover : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) == true && gameManager.oak == true)
         {
-            //duckk n dodge here
+            //duck n dodge here
         }
         if (Input.GetKeyDown(KeyCode.Space) == true && gameManager.trinity == true)
         {
@@ -84,12 +85,17 @@ public class Mover : MonoBehaviour
         if (other.gameObject.CompareTag("catCall") == true)
         {
             //catcall.Play();
+            Debug.Log("cat call...");
         }
         if (other.gameObject.CompareTag("PoPoLice") == true)
         {
             gameObject.transform.position = beginning;
             gameManager.deathCount += 1;
         }
-        
+        if (other.CompareTag("finishLine") == true && gameManager.deathCount < 3)
+        {
+            winner.SetActive(true);
+        }
     }
+    
 }
