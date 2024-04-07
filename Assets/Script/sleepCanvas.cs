@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameManager : MonoBehaviour
+public class sleepCanvas : MonoBehaviour
 {
-    public int deathCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameManager.ife == true || gameManager.oak == true || gameManager.devyn == true || gameManager.trinity == true)
+            gameObject.SetActive(false);
     }
 }

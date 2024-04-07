@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoPoMover : MonoBehaviour
+public class Dbuttonscript : MonoBehaviour
 {
-    [SerializeField] int speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,9 @@ public class PoPoMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameManager.devyn = true;
+        gameManager.ife = false;
+        gameManager.trinity = false;
+        gameManager.oak = false;
     }
 }
