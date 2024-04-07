@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class sleepInstructions : MonoBehaviour
 {
+    [SerializeField] GameObject instructions;
+    int i = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +15,12 @@ public class sleepInstructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.ife == true || gameManager.oak == true || gameManager.devyn == true || gameManager.trinity == true)
-            gameObject.SetActive(true);
+        
+        if (gameManager.ife == true || gameManager.oak == true || gameManager.devyn == true || gameManager.trinity == true && i == 1)
+        {
+            instructions.SetActive(true);
+        }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-            gameObject.SetActive(false);
+        Destroy(instructions, 10f);
     }
 }

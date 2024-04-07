@@ -13,9 +13,14 @@ public class Tbuttonscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void MyFunct()
+    {
         gameManager.trinity = true;
         gameManager.ife = false;
         gameManager.devyn = false;
         gameManager.oak = false;
     }
-}
+    }

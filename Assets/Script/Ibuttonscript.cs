@@ -13,6 +13,11 @@ public class Ibuttonscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void MyFunct()
+    {
         gameManager.ife = true;
         gameManager.oak = false;
         gameManager.devyn = false;
