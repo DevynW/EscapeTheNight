@@ -64,9 +64,13 @@ public class Mover : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //AudioSource catcall = other.gameObject.GetComponent<AudioSource>();
+        //AudioSource man = other.gameObject.GetComponent<AudioSource>();
+
         if (other.gameObject.CompareTag("MorehouseMan") == true)
         {
             Debug.Log("Ooh, he gotcha didn't he?!");
+            //man.Play();
 
             if (gameObject.transform.position.z >= 0f)
             {
@@ -76,6 +80,10 @@ public class Mover : MonoBehaviour
             {
                 gameObject.transform.position = beginning;
             }
+        }
+        if (other.gameObject.CompareTag("catCall") == true)
+        {
+            //catcall.Play();
         }
         if (other.gameObject.CompareTag("PoPoLice") == true)
         {
